@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1024" height="1024" role="img" aria-label="Dato de la Noche">
+  <defs>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c3170"/>
+      <stop offset="1" stop-color="#070d22"/>
+    </linearGradient>
+    <radialGradient id="brillo" cx="0.38" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#ffd08a"/>
+      <stop offset="1" stop-color="#ffb547"/>
+    </radialGradient>
+    <mask id="creciente">
+      <rect width="512" height="512" fill="#000"/>
+      <circle cx="248" cy="262" r="152" fill="#fff"/>
+      <circle cx="318" cy="224" r="134" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="512" height="512" fill="url(#cielo)"/>
+  <!-- estrellas -->
+  <g fill="#ffd08a">
+    <circle cx="378" cy="98" r="5"/>
+    <circle cx="430" cy="170" r="3.5" opacity=".8"/>
+    <circle cx="96" cy="120" r="3.5" opacity=".7"/>
+    <circle cx="150" cy="60" r="2.5" opacity=".6"/>
+    <circle cx="452" cy="268" r="2.5" opacity=".6"/>
+  </g>
+  <!-- luna creciente -->
+  <rect width="512" height="512" fill="url(#brillo)" mask="url(#creciente)"/>
+  <!-- sello de verificado -->
+  <circle cx="352" cy="352" r="50" fill="#4fd1c5"/>
+  <circle cx="352" cy="352" r="50" fill="none" stroke="#070d22" stroke-width="8" opacity=".35"/>
+  <path d="M328 354l17 17 32-36" fill="none" stroke="#070d22" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
