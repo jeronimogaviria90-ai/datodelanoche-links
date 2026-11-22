@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>Enlaces para copiar</title>
+<style>
+  :root{--fondo:#0b1530;--tarjeta:#121f45;--linea:#5468a8;--texto:#eef2ff;--suave:#a9b4d6;--ambar:#ffb547;--teal:#4fd1c5}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fondo);color:var(--texto);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  main{max-width:560px;margin:0 auto;padding:28px 18px 48px}
+  h1{font-size:26px;margin:0 0 6px}
+  .intro{color:var(--suave);margin:0 0 26px}
+  h2{font-size:20px;margin:30px 0 4px}
+  .cuenta{color:var(--suave);margin:0 0 12px;font-size:15px}
+  .enlace{background:var(--tarjeta);border:1.5px solid var(--linea);border-radius:16px;padding:14px;margin:0 0 12px}
+  .titulo{font-weight:700;margin:0 0 8px}
+  .titulo small{display:block;font-weight:400;color:var(--suave)}
+  input{width:100%;background:#0b1530;color:var(--texto);border:1px solid var(--linea);border-radius:10px;padding:12px;font:14px/1.3 ui-monospace,Consolas,monospace}
+  button{margin-top:10px;width:100%;min-height:52px;border:0;border-radius:12px;background:var(--ambar);color:#0b0f2e;font:700 17px system-ui,sans-serif;cursor:pointer;touch-action:manipulation}
+  button.ok{background:var(--teal)}
+  :focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+  .pasos{color:var(--suave);font-size:15px;padding-left:20px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Enlaces para copiar</h1>
+  <p class="intro">Abre esta página en el celular. Toca "Copiar" y pega el enlace en Instagram: Perfil → Editar perfil → Enlaces → Agregar enlace externo.</p>
+
+  <h2>Cuenta A · @datodelanoche</h2>
+  <p class="cuenta">Agrega los tres, en este orden.</p>
+
+  <div class="enlace">
+    <p class="titulo">1. Página con las fuentes <small>Título: Fuentes y contacto</small></p>
+    <input readonly value="https://jeronimogaviria90-ai.github.io/datodelanoche-links/" aria-label="Enlace a la página con las fuentes">
+    <button type="button">Copiar</button>
+  </div>
+  <div class="enlace">
+    <p class="titulo">2. WhatsApp <small>Título: WhatsApp para tu negocio</small></p>
+    <input readonly value="https://wa.me/573146155609?text=Hola%2C%20vi%20Dato%20de%20la%20Noche%20y%20quiero%20un%20video%20de%2040%20segundos%20para%20mi%20negocio.%20%C2%BFC%C3%B3mo%20trabajan%3F" aria-label="Enlace de WhatsApp">
+    <button type="button">Copiar</button>
+  </div>
+  <div class="enlace">
+    <p class="titulo">3. Cuenta de negocios <small>Título: Tu Negocio en Escena</small></p>
+    <input readonly value="https://www.instagram.com/tu_negocio_en_escena/" aria-label="Enlace a la cuenta de negocios">
+    <button type="button">Copiar</button>
+  </div>
+
+  <h2>Cuenta B · @tu_negocio_en_escena</h2>
+  <div class="enlace">
+    <p class="titulo">1. WhatsApp <small>Título: Escríbenos por WhatsApp</small></p>
+    <input readonly value="https://wa.me/573146155609?text=Hola%2C%20vi%20Tu%20Negocio%20en%20Escena%20y%20quiero%20un%20video%20de%2040%20segundos%20para%20mi%20negocio.%20%C2%BFC%C3%B3mo%20trabajan%3F" aria-label="Enlace de WhatsApp de la cuenta de negocios">
+    <button type="button">Copiar</button>
+  </div>
+
+  <p class="cuenta">Si el botón no copia, mantén presionado el enlace, elige "Seleccionar todo" y luego "Copiar".</p>
+</main>
+<script>
+  document.querySelectorAll('.enlace').forEach(function (bloque) {
+    var campo = bloque.querySelector('input'), boton = bloque.querySelector('button');
+    boton.addEventListener('click', function () {
+      campo.focus(); campo.select(); campo.setSelectionRange(0, campo.value.length);
+      var listo = function () { boton.textContent = 'Copiado ✓'; boton.classList.add('ok');
+        setTimeout(function () { boton.textContent = 'Copiar'; boton.classList.remove('ok'); }, 2200); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(campo.value).then(listo, function () { document.execCommand('copy'); listo(); });
+      } else { document.execCommand('copy'); listo(); }
+    });
+  });
+</script>
+</body>
+</html>
